@@ -1,0 +1,9 @@
+---
+  - hosts: installer
+
+    vars:
+      package_url: http://localhost
+      install_dir: /var/tmp/
+
+    tasks:
+      - include: tasks/install_package.yml

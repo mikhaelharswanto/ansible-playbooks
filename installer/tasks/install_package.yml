@@ -1,0 +1,16 @@
+---
+  - name: create temporary file
+    shell: mktemp /var/tmp/package.XXXXXXX
+    register: temp_file
+
+  - name: download package
+    get_url: '{{ package_url }}' dest='{{ temp_file.stdout }}'
+
+  - name: create install directory
+    command: mkdir -pm 755 '{{ install_dir }}'
+
+  - name: extract package
+    command: tar xf '{{ temp_file.stdout }}' chdir='{{ install_dir }}'
+
+  - name: cleanup
+    command: rm '{{ temp_file.stdout }}'
