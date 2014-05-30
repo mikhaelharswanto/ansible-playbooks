@@ -1,6 +1,6 @@
 ---
   - name: download package
-    get_url: 'url="{{ package_url }}" dest="/var/tmp"'
+    get_url: 'url="{{ package_url }}" dest="/var/tmp" use_proxy="{{ use_proxy }}"'
     register: temp_file
 
   - name: create install directory

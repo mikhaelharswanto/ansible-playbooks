@@ -4,6 +4,7 @@
     vars:
       package_url: http://localhost
       install_dir: /var/tmp/
+      use_proxy: "{{ 'yes' if lookup('env','no_proxy') == '' else 'no' }}"
 
     tasks:
       - include: tasks/install_package.yml
