@@ -10,7 +10,8 @@
     command: tar xf '{{ temp_file.dest }}' chdir='{{ install_dir }}'
 
   - name: set executable
-    command: chmod '{{ executable }}' chdir='{{ install_dir }}'
+    command: chmod +x '{{ executable }}' chdir='{{ install_dir }}'
+    when: executable
 
   - name: cleanup
     command: rm '{{ temp_file.dest }}'
