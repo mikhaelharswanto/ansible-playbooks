@@ -11,7 +11,7 @@
 
   - name: set executable
     command: chmod +x '{{ executable }}' chdir='{{ install_dir }}'
-    when: executable
+    when: len(executable) > 0
 
   - name: cleanup
     command: rm '{{ temp_file.dest }}'

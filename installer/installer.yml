@@ -4,7 +4,7 @@
     vars:
       package_url: http://localhost
       install_dir: /var/tmp/
-      executable: false
+      executable: 
       use_proxy: "{{ 'yes' if lookup('env','no_proxy') == '' else 'no' }}"
 
     tasks:
