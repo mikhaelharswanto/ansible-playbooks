@@ -1,8 +1,9 @@
 ---
 - name: Install clearwater in a box
-  hosts: all
+  hosts: clearwater_single
 
   roles:
+    - common
     - ellis
     - bono 
     - restund
@@ -11,4 +12,4 @@
     - homestead
 
   tasks:
-    - include roles/common/tasks/create_numbers.yml
+    - include: roles/common/tasks/create_numbers.yml

@@ -1,0 +1,9 @@
+---
+
+- name: Check hostname
+  shell: cat /etc/hosts | grep `hostname` | wc -l
+  register: etc_hosts
+
+- name: Adding hostname to /etc/hosts
+  shell: echo "127.0.0.1 `hostname`" >> /etc/hosts
+  when: etc_hosts.stdout == "0"
