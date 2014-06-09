@@ -1,0 +1,3 @@
+---
+- name: Install ellis
+  apt: name=ellis

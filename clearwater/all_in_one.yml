@@ -1,0 +1,14 @@
+---
+- name: Install clearwater in a box
+  hosts: all
+
+  roles:
+    - ellis
+    - bono 
+    - restund
+    - sprout
+    - homer
+    - homestead
+
+  tasks:
+    - include roles/common/tasks/create_numbers.yml

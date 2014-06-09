@@ -1,0 +1,3 @@
+---
+- name: Install homer
+  apt: name=homer force=yes

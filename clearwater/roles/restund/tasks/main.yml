@@ -1,0 +1,3 @@
+---
+- name: Install restund
+  apt: name=restund force=yes

@@ -1,0 +1,3 @@
+---
+- name: Install bono
+  apt: name=bono force=yes

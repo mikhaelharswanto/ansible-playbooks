@@ -1,0 +1,3 @@
+---
+- name: Install sprout
+  apt: name=sprout force=yes

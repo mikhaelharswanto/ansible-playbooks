@@ -1,0 +1,4 @@
+---
+
+- name: Create subscriber
+  shell: export PATH=/usr/share/clearwater/ellis/env/bin:$PATH; python create_numbers.py --start {{ number_start }} --count {{ number_count }} chdir=/usr/share/clearwater/ellis/src/metaswitch/ellis/tools/
