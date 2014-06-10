@@ -1,0 +1,4 @@
+---
+
+- name: Install clearwater cassandra
+  apt: name=clearwater-cassandra force=yes

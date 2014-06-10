@@ -1,9 +1,10 @@
 ---
 - name: Install clearwater in a box
-  hosts: clearwater_single
+  hosts: "!clearwater_tester"
 
   roles:
     - common
+    - cassandra
     - ellis
     - bono 
     - restund

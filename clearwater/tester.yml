@@ -1,0 +1,7 @@
+---
+- name: Install clearwater in a box
+  hosts: clearwater_tester
+
+  roles:
+    - common
+    - tester

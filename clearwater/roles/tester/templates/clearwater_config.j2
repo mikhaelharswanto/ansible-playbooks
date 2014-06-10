@@ -1,0 +1,30 @@
+# Deployment definitions
+home_domain=example.com
+sprout_hostname={{ groups['clearwater_sprout'][0] }}
+hs_hostname={{ groups['clearwater_homestead'][0] }}:8888
+hs_provisioning_hostname={{ groups['clearwater_homestead'][0] }}:8889
+xdms_hostname={{ groups['clearwater_restund'][0] }}:7888
+
+# Local IP configuration
+local_ip={{ groups['clearwater_tester'][0] }}
+public_ip={{ groups['clearwater_tester'][0] }}
+public_hostname={{ groups['clearwater_tester'][0] }}
+
+# Email server configuration
+smtp_smarthost=127.0.0.1
+smtp_username=username
+smtp_password=password
+email_recovery_sender=clearwater@example.com
+
+# Keys
+signup_key=secret
+turn_workaround=secret
+ellis_api_key=secret
+ellis_cookie_key=secret
+
+node_idx=1 #the node index (defaults to 1)
+bono_servers={% for host in groups['clearwater_bono'] %}{{ host }},{% endfor %} #a list of bono servers in this deployment
+# the target host (defaults to the $node_idx-th entry in $bono_servers or, if there are no $bono_servers, defaults to $home_realm)
+#stress_target=192.168.0.11
+base={{ number_start }} # the base directory number (defaults to 2010000000)
+count={{ number_count }}  # the number of calls to run on this node (defaults to 50000) - note that the SIPp script simulates 2 subscribers per "call".

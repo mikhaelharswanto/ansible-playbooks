@@ -8,8 +8,5 @@
 - name: Add clearwater apt repository
   apt_repository: repo='deb http://repo.cw-ngv.com/stable binary/' state=present
 
-- name: Install clearwater cassandra
-  apt: name=clearwater-cassandra force=yes
-
 - name: Install clearwater auto config
   apt: name=clearwater-auto-config-generic force=yes
