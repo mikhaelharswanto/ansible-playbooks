@@ -10,3 +10,6 @@
 
 - name: Install clearwater auto config
   apt: name=clearwater-auto-config-generic force=yes
+
+- name: Configure clearwater
+  template: src=clearwater_config.j2 dest=/etc/clearwater/config

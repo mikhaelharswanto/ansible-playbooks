@@ -14,3 +14,9 @@
 
   tasks:
     - include: roles/common/tasks/create_numbers.yml
+
+- name: Create users
+  hosts: clearwater_homestead
+
+  tasks:
+    - include: roles/common/tasks/create_users.yml

@@ -1,0 +1,13 @@
+---
+
+- name: Create users csv file
+  template: src=users.j2 dest=/var/tmp/users.csv
+
+- name: Generate homestead user creation scripts
+  shell: /usr/share/clearwater/homestead/src/metaswitch/crest/tools/bulk_create.py /var/tmp/users.csv
+
+- name: Execute create homestead script
+  shell: /var/tmp/users.create_homestead.sh
+
+- name: Execute create xdm script
+  shell: /var/tmp/users.create_xdm.sh

@@ -1,0 +1,4 @@
+{% set numbers = range(number_start, number_start + number_count) %}
+{% for number in numbers %}
+sip:{{ number }}@{{ domain }},{{ number }}@{{ domain }},{{ domain }},{{ password }}
+{% endfor %}
