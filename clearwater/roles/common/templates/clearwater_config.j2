@@ -23,7 +23,7 @@ turn_workaround=secret
 ellis_api_key=secret
 ellis_cookie_key=secret
 
-{% if ansible_hostname.index('tester') != 0 %}
+{% if 'tester' in ansible_hostname %}
 node_idx=1 #the node index (defaults to 1)
 bono_servers={% for host in groups['clearwater_bono'] %}{{ host }},{% endfor %} #a list of bono servers in this deployment
 # the target host (defaults to the $node_idx-th entry in $bono_servers or, if there are no $bono_servers, defaults to $home_realm)
