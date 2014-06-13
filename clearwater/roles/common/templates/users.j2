@@ -1,4 +1,4 @@
-{% set numbers = range(int(number_start), int(number_start) + number_count) %}
+{% set numbers = range(int(number_start), int(number_start) + int(number_count)) %}
 {% for number in numbers %}
 sip:{{ number }}@{{ domain }},{{ number }}@{{ domain }},{{ domain }},{{ password }}
 {% endfor %}
