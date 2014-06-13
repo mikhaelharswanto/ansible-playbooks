@@ -1,5 +1,8 @@
 ---
 
+- name: Install homestead Provisioning
+  apt: name=homestead-prov force=yes
+
 - name: Create users csv file
   template: src=users.j2 dest=/var/tmp/users.csv
 
@@ -9,5 +12,6 @@
 - name: Execute create homestead script
   shell: /var/tmp/users.create_homestead.sh
 
+# FIXME This should be run in Homer node separately, for now we always assume homer will be installed in the same node as homestead
 - name: Execute create xdm script
   shell: /var/tmp/users.create_xdm.sh
