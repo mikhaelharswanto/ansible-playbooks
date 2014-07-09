@@ -1,0 +1,6 @@
+---
+  - hosts: gzip
+
+    tasks:
+      - name: Install pigz
+        apt: name=pigz force=yes

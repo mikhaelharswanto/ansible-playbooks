@@ -1,0 +1,6 @@
+---
+  - hosts: 7zip
+
+    tasks:
+      - name: Install 7Zip
+        apt: name=p7zip-full force=yes
